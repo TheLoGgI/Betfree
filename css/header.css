@@ -1,0 +1,52 @@
+/* ******************
+****** Header ********
+**********************/
+
+header {
+    width: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trademark {
+    max-width: 8.5rem;
+    /* 160px */
+}
+
+.coins {
+    background: var(--clr-main);
+    display: inline-block;
+    padding: 0em .5em;
+    font-size: var(--fnt-size14);
+    border-radius: var(--radius-size);
+    color: white;
+
+}
+
+.coins p {
+    margin: 20% 0;
+}
+
+.hidden {
+    user-select: none;
+    opacity: 0;
+}
+
+.main-navigation {
+    display: inline-block;
+    height: auto;
+    margin-bottom: .5em;
+}
+
+.navigation-list {
+    display: none;
+    list-style-type: none;
+
+}
+
+.list-item a {
+    text-decoration: none;
+    color: var(--clr-link);
+}
