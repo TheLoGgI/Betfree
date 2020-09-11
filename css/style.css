@@ -1,0 +1,178 @@
+:root {
+    --ff-heading: "Kumbh Sans", sans-serif;
+    --ff-body: "Raleway", sans-serif;
+    --clr-main: #FF4D13;
+    --clr-secondry: #FFBEA9;
+    --clr-icon: #FA7A02;
+    --clr-link: #000;
+    --radius-size: 10px;
+    --fnt-size14: 0.875rem;
+    --fnt-size16: 1rem;
+    --fnt-size18: 1.125rem;
+    font-size: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    font-family: var(--ff-body);
+    line-height: 1.6;
+    /* font-size: clamp(1rem, 2vw, 1.25rem); */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--ff-heading);
+    font-weight: Bold;
+    line-height: 1.6;
+    /* min-width: 6em; */
+}
+
+header {
+    width: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ******************
+****** Header ********
+**********************/
+
+.trademark {
+    max-width: 8.5rem; /* 160px */ 
+}
+
+.coins {
+    background: var(--clr-main);
+    display: inline-block;
+    padding: 0em .5em;
+    font-size: var(--fnt-size14);
+    border-radius: var(--radius-size);
+    color: white;
+
+}
+.coins p {
+    margin: 20% 0;
+}
+
+.hidden {
+    user-select: none;
+    opacity: 0;
+}
+
+.main-navigation {
+    display: inline-block;
+    height: auto;
+    margin-bottom: .5em;
+}
+
+.navigation-list {
+    display: none;
+    list-style-type: none;
+    
+}
+
+.list-item a{
+    text-decoration: none;
+    color: var(--clr-link);
+}
+
+/* ****************************
+****** Hero section ******
+***********************************/
+
+.indexpage-hero {
+    width: 100%;
+    height: 60vh;
+    /* padding: 1rem; */
+    background: #F5F5F5 url("../images/football.jpg") no-repeat scroll;
+    background-size: cover;
+    background-position: left bottom;
+}
+
+.indexpage-hero h1{
+    font-size: clamp(1.4rem, 5vw, 2rem);;
+    color: white;
+}
+
+.indexpage-content {
+    text-align: center;
+    width: 80%;
+    margin-left: 50%;
+    margin-top: 5rem;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    text-shadow: 1px 1px 5px black;
+}
+
+.indexpage-content > * {
+    font-size: clamp(var(--fnt-size14), 3vw, 1.2rem);
+    color: white;
+}
+
+.btn {
+    background-color: var(--clr-main);
+    padding: .6em 1em;
+    font-size: clamp(.8rem, 3vw, 1rem);
+    font-weight: bold;
+    border-radius: var(--radius-size);
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    border: none;
+    margin-right: 1rem;
+}
+
+.btn-secoundary {
+    padding: .4em 1em;
+    border: 3px solid var(--clr-main);
+    background-color: transparent;
+    color: var(--clr-main);
+}
+
+/* ****************************
+****** Description section ******
+***********************************/
+
+.index-description {
+    padding: 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.description-section:first-child {
+    margin-top: 3rem;
+}
+.description-section + section {
+    margin-top: 5rem;
+}
+
+.description-section h2 {
+    margin-bottom: .6em;
+}
+
+.section-content {
+    display: flex;
+    /* font-size: clamp(var(--fnt-size14), 20ch , var(--fnt-size16)); */
+}
+
+.section-content p {
+    margin-right: 2em;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.reverse p {
+    margin-left: 2em;
+}

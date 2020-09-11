@@ -1,0 +1,120 @@
+.menu-icon {
+    width: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 25;
+    transition: width .3s ease,
+    opacity .3s ease,
+    transform .5s ease;
+}
+
+.menu-icon > * {
+background: black;
+margin-top: 6px;
+height: 3px;
+border-radius: 5px;
+user-select: none;
+}
+
+.menu-icon:hover > *,
+.menu-icon:focus > * {
+width: 100%;
+}
+
+
+
+.icon-active .line1 {
+animation: rotatedownout .5s ease forwards !important;
+}
+.menu-icon .line1 {
+animation: rotatedownin .5s ease forwards;
+}
+
+.icon-active .line2 {
+animation: fadein .3s ease forwards !important;
+}
+.menu-icon .line2 {
+animation: fadeout .3s ease forwards;
+}
+
+.icon-active .line3 {
+animation: rotateupout .3s ease forwards !important;
+}
+.menu-icon .line3 {
+animation: rotateupin .3s ease forwards;
+}
+
+@keyframes fadeout {
+from {
+    opacity: 1;
+}
+to {
+    opacity: 0;
+}
+}
+
+@keyframes fadein {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+
+
+@keyframes rotateupin {
+from {
+    transform: rotate(0deg);
+    transform-origin: left;
+    width: 70%; 
+}
+to {
+    transform: rotate(-45deg);
+    transform-origin: left;
+    width: 100%;
+}
+}
+
+@keyframes rotateupout {
+from {
+    transform: rotate(-45deg);
+    transform-origin: left;
+    width: 100%;
+}
+
+to {
+    transform: rotate(0deg);
+    transform-origin: left;
+    width: 60%; 
+}
+}
+
+
+/* Top line of menu icon */
+@keyframes rotatedownin {
+from {
+    transform: rotate(0deg);
+    transform-origin: left;
+    width: 60%; 
+}
+to {
+    transform: rotate(45deg);
+    transform-origin: left;
+    width: 100%;
+}
+}
+
+@keyframes rotatedownout {
+from {
+    transform: rotate(45deg);
+    transform-origin: left;
+    width: 100%;
+}
+
+to {
+    transform: rotate(0deg);
+    transform-origin: left;
+    width: 60%; 
+}
+}
