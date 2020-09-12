@@ -56,5 +56,67 @@
     max-width: 30px;
 }
 
+#currentEvents, #popularGames {
+    padding: 0 1rem;
+    margin-top: 2rem;
+}
+
+.current-events {
+    background-color: var(--clr-secondry);
+    padding: 1rem;
+    position: relative;
+}
+
+.date-label {
+    position: absolute;
+    background-color: var(--clr-main);
+    padding: .2em 1.5em .2em .2em;
+    right: -10px;
+    font-size: var(--fnt-size14);
+    color: white;
+}
+
+.currentEvents__title {
+    text-align: left;
+    display: flex;
+    font-size: var(--fnt-size22);
+    align-items: center;
+    line-height: 20px;
+}
+
+.currentEvents__title img{
+    width: 20px;
+    margin-right: 0.3em;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.bet-event {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.bet-event span {
+    font-weight: normal;
+}
+.bets-action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bets-action button {
+    border: none;
+    background-color: white;
+    padding: .4em 1em;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.bets-action button:hover,
+.bets-action button:focus {
+    background-color: var(--clr-main);
+    color: white;
+}
 
 
