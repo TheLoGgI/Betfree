@@ -9,7 +9,7 @@
     --clr-icon: #FA7A02;
     --clr-link: #000;
     --clr-bg: #F5F5F5;
-    --radius-size: 5px;
+    --radius-size: 3px;
     --fnt-size10: 0.625rem;
     --fnt-size14: 0.875rem;
     --fnt-size16: 1rem;
@@ -17,7 +17,7 @@
     --fnt-size22: 1.325rem;
     --fnt-size24: 1.5rem;
     --fnt-size28: 1.75rem;
-    font-size: 1rem;
+    font-size: 1.125rem; /* 18px as normal font-size */
 }
 
 * {
