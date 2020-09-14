@@ -1,0 +1,56 @@
+@import url('./header.css');
+@import url('./menuicon.css');
+
+.leaderboard-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    background-color: white;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px;
+  cursor: pointer;
+  width: 250px
+}
+
+.button:focus {
+    background-color: #FF4D13;
+    color: white
+}
+
+.rankings {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.headline {
+    background-color: #FF4D13;
+    display: flex;
+    color: white;
+    font-size: 18px;
+    margin: 5px;
+    padding: 10px 10px;
+    width: 180px;
+    margin: 0 auto;
+}
+
+.player {
+    background-color: #FFBEA9;
+    display: flex;
+    color: black;
+    margin: 5px;
+    padding: 10px 10px;
+    width: 180px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
