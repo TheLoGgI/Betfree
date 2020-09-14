@@ -167,3 +167,18 @@
     padding-top: 0;
 }
 
+.bottom-menu {
+    width: 100%;
+    z-index: 20;
+    background-color: darkblue;
+    display: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.bottom-menu svg{
+    width: 20%;
+    padding: 1.5rem .5rem;
+}
