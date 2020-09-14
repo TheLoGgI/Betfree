@@ -1,13 +1,13 @@
-    // "classToggle('menuIcon','icon-active') 
-    // classToggle('aside','open')
-window.addEventListener('DOMContentLoaded', () => {
 
-    clickHandler('menuIcon', 'icon-active')
+    window.addEventListener('DOMContentLoaded', () => {
+        clickHandler('menuIcon')
 })
 
 function clickHandler(elementID, className = 'active') {
     document.getElementById(elementID).addEventListener('click', _ => {
         classToggle(elementID, className)
+        classToggle('asideNav','open')
+
     }, false)
 }
 
@@ -15,3 +15,10 @@ function classToggle(elementID, className) {
     document.getElementById(elementID)
         .classList.toggle(className)
 }
+
+// Not in use
+function checkClass(element, className) {
+    return [...element.classList].includes(className)
+}
+
+

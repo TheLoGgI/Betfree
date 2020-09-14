@@ -19,25 +19,26 @@ user-select: none;
 .menu-icon:hover > *,
 .menu-icon:focus > * {
 width: 100%;
+background-color: var(--clr-main);
 }
 
 
 
-.icon-active .line1 {
+.active .line1 {
 animation: rotatedownout .5s ease forwards !important;
 }
 .menu-icon .line1 {
 animation: rotatedownin .5s ease forwards;
 }
 
-.icon-active .line2 {
+.active .line2 {
 animation: fadein .3s ease forwards !important;
 }
 .menu-icon .line2 {
 animation: fadeout .3s ease forwards;
 }
 
-.icon-active .line3 {
+.active .line3 {
 animation: rotateupout .3s ease forwards !important;
 }
 .menu-icon .line3 {

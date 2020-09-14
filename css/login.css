@@ -1,0 +1,287 @@
+#login-page{
+display: flex;
+justify-content: center;
+}
+
+
+/* .login-content{
+    width: 40%;
+} */
+
+.title{
+    margin-top: 50px;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 100;
+}
+
+.login-fields{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-field{
+background-color: #FFBEA9;
+border: none;
+margin: 10px;
+padding: 10px;
+font-size: large;
+height: 50px;
+color: black;
+}
+
+.remember{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 0px 10px;
+}
+
+form input[type="checkbox"]{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    /* -webkit-appearance: none; */
+    background-color: #FFBEA9;
+    margin-right: 20px;
+}
+
+/* .checkbox:checked{
+   background-image: url("../images/correct.png") ;
+} */
+
+.login-button{
+    background-color: #FFBEA9;
+    width: 80px;
+    height: 35px;
+    border: none;
+    border-radius: 15px;
+    align-self: center;
+    margin: 10px 0px 0px 10px;
+    color: rgb(118, 118, 118);
+}
+
+.need-container{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 0px 10px;
+}
+
+.need-blue{
+    margin-left: 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+/* Match Page */
+
+iframe{
+    width: 100%;
+    height: fit-content;
+    height: 250px;
+}
+
+.match-teams{
+   background-color: #FFBEA9;
+   width: 100%;
+   height: 50px;
+   display: flex;
+   justify-content: space-between; 
+   color: black;
+   padding: 13px;
+}
+
+.p-teams{
+    display: flex;
+    align-content: center;
+}
+
+.match-type{
+    display: flex;
+    flex-direction: row;
+    background-color:#E8E8E8;
+    justify-content: space-around;
+    height: 50px;
+    padding: 13px;
+}
+
+.match-bets{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.match-top{
+    background-color: var(--clr-main);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.match-winner{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.match-bottom{
+    width: 100%;
+    height: 50px;
+    background-color: var(--clr-secondry) ;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.match-button{
+    border: none;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+/* My bets */
+
+#bets{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.mybets{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sort{
+display: flex;
+flex-direction: row;
+}
+
+.arrows{
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.coupon-title{
+    background-color: var(--clr-main);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px;
+    margin-top: 30px;
+}
+
+.coupon-content{
+    background-color: var(--clr-secondry) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.coupon-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.coupon-orange{
+  background-color: var(--clr-main);
+width: 100%;
+color: white;
+padding: 10px;
+text-align: center;
+
+}
+
+.coupon-white{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.coupon-bottom{
+    background-color: var(--clr-secondry);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+
+
+/* LOGIN FORM PAGE*/
+
+/* form input[type="submit"] {
+    background-color: #F63131;
+    padding: .6em 3em;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Avenir LT Std', 'Montserrat', sans-serif;
+    font-weight: 700;
+} */
+
+.form-input {
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+    min-width: 150px;
+}
+
+.form-input input{
+    padding: var(--fnt-size10);
+    background-color: var(--clr-secondry);
+    border: none;
+    border-radius: var(--radius-size);
+    font-size: var(--fnt-size18);
+    height: 100%;
+    width: 100%;
+}
+
+.form-label {
+    margin: 0;
+    text-align: left;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: #000000;
+    opacity: .6;
+    transition: bottom .2s ease;
+}
+
+.form-input:hover .form-label,
+.form-input:focus-within .form-label {
+    opacity: 1;
+    bottom: 2.6rem;
+    color: #F63131;
+}
+
+.not-empty {
+    opacity: 1;
+    bottom: 2.6em;
+    /* color: #F63131; */
+}
+
+.form-input:hover input,
+.form-input input:focus{
+    background-color: #ecebee;
+}
+
+.terms {
+    color: blue;
+}
+
+.form__label-inline {
+    display: inline;
+}
