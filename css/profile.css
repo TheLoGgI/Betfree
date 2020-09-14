@@ -1,0 +1,62 @@
+@import url('./header.css');
+@import url('./menuicon.css');
+
+.section-content {
+    display: flex;
+    /* font-size: clamp(var(--fnt-size14), 20ch , var(--fnt-size16)); */
+    align-items: center;
+}
+/*profile*/
+.profile-picture {
+    width: 150px;
+}
+
+/*button*/
+.invite-frinds {
+    width: 20px;
+}
+
+.button {
+  background-color: #FFBEA9;
+  border: none;
+  color: black;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.change {
+    margin-left: 15px;
+}
+
+/*stats*/
+.profile-stats {
+    margin-left: 15px;
+}
+
+.stats {
+    margin-left: 25px;
+}
+
+/*achivements*/
+.headline {
+    margin-left: 15px;
+}
+
+.achievements-container {
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.achievements {
+    display: flex;
+    margin: 5px;
+    background-color: #FFBEA9;
+    padding: 10px 10px;
+    
+}
