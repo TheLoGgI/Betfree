@@ -51,6 +51,10 @@
     user-select: none;
 }
 
+.glide__slide:hover {
+    background-color: var(--clr-secondry);
+}
+
 .sport-item img,
 .glide__slide img {
     max-width: 30px;
