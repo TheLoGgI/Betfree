@@ -1,15 +1,21 @@
+.center{
+    justify-content: center;
+}
+
+.displaynone{
+    display: none;
+}
 #login-page{
 display: flex;
 justify-content: center;
+display: none;
 }
 
-
-/* .login-content{
-    width: 40%;
-} */
-
+.topbar{
+    display: none;
+}
 .title{
-    margin-top: 50px;
+    margin: 30px 0px;
     text-align: center;
     font-size: xxx-large;
     font-weight: 100;
@@ -45,10 +51,9 @@ form input[type="checkbox"]{
     background-color: #FFBEA9;
     margin-right: 20px;
 }
-
-/* .checkbox:checked{
-   background-image: url("../images/correct.png") ;
-} */
+.firebaseui-idp-password{
+    background-color: #FA7A02;
+}
 
 .login-button{
     background-color: #FFBEA9;
@@ -103,6 +108,7 @@ iframe{
     justify-content: space-around;
     height: 50px;
     padding: 13px;
+    font-size: 13px;
 }
 
 .match-bets{

@@ -8,12 +8,17 @@
 
     <link rel="icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
     <link rel="apple-touch-icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
-    
+    <script src="./js/import.js" async></script>
     <title>BetFree - Free Easy Betting</title>
     <link href="./css/commen.css" rel="stylesheet"/>
     <link href="./css/index.css" rel="stylesheet"/>
+    <link href="../css/style.home.css" rel="stylesheet"/>
+    <link href="./css/info.css" rel="stylesheet" />
+    <link href="../css/login.css" rel="stylesheet" />
+    <link href="./css/profile.css" rel="stylesheet" />
+    <link href="./css/leaderboard.css" rel="stylesheet" />
 </head>
-<body>
+<body onhashchange="pageChange()">
 
     <header id="headerElement">
         <div id="balancecoins" class="coins hidden">
@@ -28,14 +33,15 @@
         </div>
         <nav class="main-navigation" id="asideNav">
             <ul class="navigation-list">
-                <li class="item list-item"><a href="./pages/home.html">Home</a></li>
-                <li class="item list-item"><a href="#">Profil</a></li>
-                <li class="item list-item"><a href="#">Leaderboard</a></li>
-                <li class="item list-item"><a href="#">Information</a></li>
-                <li class="item list-item"><a href="#">My Bets</a> </li>
+                <li class="item list-item"><a href="#home">Home</a></li>
+                <li class="item list-item"><a href="#profil">Profil</a></li>
+                <li class="item list-item"><a href="#leaderboard">Leaderboard</a></li>
+                <li class="item list-item"><a href="#info">Information</a></li>
+                <li class="item list-item"><a href="#mybets">My Bets</a> </li>
             </ul>
         </nav>
     </header>
+<main id="index" class="page">
 
     <section id="indexpage">
         <div class="indexpage-hero">
@@ -76,7 +82,21 @@
     
         </section>
     </div>
+</main>
+
+    <div import href="./pages/home.html"></div>
+    <div import href="./pages/info.html"></div>
+    <div import href="./pages/signin.html"></div>
+    <div import href="./pages/matchpage.html"></div>
+    <div import href="./pages/mybets.html"></div>
+    <div import href="./pages/leaderboard.html"></div>
+    <div import href="./pages/profil.html"></div>
+
+    <script type="text/javascript" src="./js/spa.js"></script>
     <script type="text/javascript" src="./js/menuicon.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script type="text/javascript" src="./js/glider.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>

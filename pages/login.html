@@ -10,7 +10,7 @@
 
     <link rel="icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
     <link rel="apple-touch-icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
-
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <title>BetFree - Login</title>
     <link href="../css/commen.css" rel="stylesheet" />
     <link href="../css/login.css" rel="stylesheet" />
@@ -18,8 +18,8 @@
 
 <body>
 
-    <header id="headerElement">
-        <div id="balancecoins" class="coins hidden">
+    <header id="headerElement" class="center">
+        <div id="balancecoins" class="displaynone coins hidden">
             <p>2357 <span>coins</span></p>
         </div>
         <img class="trademark betfree-logo" src="../icons/betfree-colorgradient.svg" alt="BetFree Trademark">
@@ -39,20 +39,18 @@
             </ul>
         </nav>
     </header>
-
+    <h1 class="title">Login</h1>
     <section id="login-page">
         <div class="login-content">
-
-            <h1 class="title">Login</h1>
             <div class="login-fields">
-                <input placeholder="Username" class="input-field"></input>
-                <input placeholder="Password" class="input-field"></input>
+                <input placeholder="Username" id="login" class="input-field"></input>
+                <input placeholder="Password" id="password" class="input-field"></input>
             </div>
             <div class="remember">
                 <input type="checkbox" class="checkbox">
                 <h5 class="">Remember Me</h5>
             </div>
-            <button class="login-button">
+            <button onclick="selectUser()" class="login-button">
                 Login
             </button>
             <div class="need-container">
@@ -61,8 +59,24 @@
             </div>
         </div>
     </section>
-
-    <script type="text/javascript" src="./js/menuicon.js"></script>
+    <section id="login" class="page">
+        <header class="topbar">
+            <h2>Login</h2>
+        </header>
+        <!-- firebase auth container  -->
+        <section id="firebaseui-auth-container"></section>
+    </section>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script type="text/javascript" src="../js/menuicon.js"></script>
+    <script type="text/javascript" src="../js/firebase.js"></script>
 </body>
 
 </html>

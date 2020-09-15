@@ -7,9 +7,9 @@
     <meta name="author" content="Lasse Aajkær, Martin Munding, Wiktor..." />
     <meta name="viewport"
         content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-
     <link rel="icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
     <link rel="apple-touch-icon" href="icons/favicon.svg" type="image/svg" sizes="64x64">
+    <script type="text/javascript" src="../js/import.js" async></script>
 
     <title>Home - BetFree</title>
     <link href="../css/commen.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <header id="headerElement">
+    <!-- <header id="headerElement">
         <div id="balancecoins" class="coins">
             <p>0 <span>coins</span></p>
         </div>
@@ -37,101 +37,109 @@
                 <li class="item list-item"><a href="#">My Bets</a> </li>
             </ul>
         </nav>
-    </header>
-    <section id="search">
-        <form class="input-search search">
-            <input type="text" placeholder="Search">
-            <img src="../icons/search.svg" alt="search icon">
-        </form>
-    </section>
+    </header> -->
+    <main id="home" class="page">
+        <section id="search">
+            <form class="input-search search">
+                <input type="text" placeholder="Search">
+                <img src="../icons/search.svg" alt="search icon">
+            </form>
+        </section>
 
-    <div class="sports glide">
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <li class="glide__slide">
-                    <img src="../icons/sports/football.svg" alt="Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/basketball.svg" alt="basketball Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/basketball.svg" alt="basketball Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/basketball.svg" alt="basketball Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/bike.svg" alt="bikeing Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/joystick.svg" alt="games Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/basketball.svg" alt="basketball Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-                <li class="glide__slide">
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <section id="currentEvents">
-        <h2>Current Events</h2>
-        <div class="current-events">
-            <div class="date-label">Today 17.30</div>
-            <h3 class="currentEvents__title">
-                <img src="../icons/sports/bike.svg" alt="bikeing Icon">
-                Tour de France
-            </h3>
-            <p>6. etape: Primoz roglic</p>
-            <p class="bet-event"> Best on today's stage: <span>Julian Alapilippe</span></p>
-            <div class="bets-action">
-                <button>Yes: 1.40</button>
-                <button>No: 2.30</button>
+        <div class="sports glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football.svg" alt="Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/basketball.svg" alt="basketball Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/basketball.svg" alt="basketball Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/basketball.svg" alt="basketball Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/bike.svg" alt="bikeing Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/joystick.svg" alt="games Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/basketball.svg" alt="basketball Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                    <li class="glide__slide">
+                        <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <section id="popularGames">
-        <h2>Popular Games</h2>
-        <div id=indhold></div>
-    </section>
+        <section id="currentEvents">
+            <h2>Current Events</h2>
+            <div class="current-events">
+                <div class="date-label">Today 17.30</div>
+                <h3 class="currentEvents__title">
+                    <img src="../icons/sports/bike.svg" alt="bikeing Icon">
+                    Tour de France
+                </h3>
+                <p>6. etape: Primoz roglic</p>
+                <p class="bet-event"> Best on today's stage: <span>Julian Alapilippe</span></p>
+                <div class="bets-action">
+                    <button>Yes: 1.40</button>
+                    <button>No: 2.30</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="popularGames">
+            <h2>Popular Games</h2>
+            <div id=indhold></div>
+        </section>
+        <footer class="menu">
+            <img class="menu-icon" src="../icons/back.svg">
+            <img class="menu-icon" src="../icons/user.svg">
+            <img class="menu-icon" src="../icons/award.svg">
+            <img class="menu-icon" src="../icons/bill.svg">
+        </footer>
+    </main>
 
     <script type="text/javascript" src="../js/menuicon.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> -->
     <script type="text/javascript" src="../js/glider.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <!-- <script type="text/javascript" src="../js/main.js"></script> -->
 </body>
 
 </html>
