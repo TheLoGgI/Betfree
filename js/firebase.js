@@ -1,6 +1,6 @@
 "use strict";
 
-// Your web app's Firebase configuration
+console.log('firebase js');
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
@@ -12,6 +12,7 @@ const firebaseConfig = {
     messagingSenderId: "321186567040",
     appId: "1:321186567040:web:8ff63037fdb16b450fe765"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
@@ -25,9 +26,9 @@ userRef.onSnapshot(function (snapshotData) {
     let users = [];
     snapshotData.forEach(function (doc) {
         let user = doc.data();
-        console.log(user);
+        // console.log(user);
         user.id = doc.id;
-        users.push(user);
+        // users.push(user);
     });
 });
 
@@ -73,16 +74,60 @@ let _firebaseUI;
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) { // if user exists and is authenticated
         userAuthenticated(user);
-        console.log(user)
+        // console.log(user)
+
+        
     } else { // if user is not logged in
         userNotAuthenticated();
     }
 });
 
+function setDoc(userID, accountInfo) {
+    console.log(userID, accountInfo.email);
+    db.collection("user").doc(userID).set({
+        uid: userID,
+        mail: accountInfo.email,
+        currency: 500,
+    }).then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    return {
+        uid: userID,
+        mail: accountInfo.email,
+        currency: 500,
+    }
+}
+
+function getDoc(userID) {
+    const docRef = db.collection("user").doc(userID);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            return doc.data()
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+    
+}
+
 function userAuthenticated(user) {
-    appendUserData(user);
-    hideTabbar(false);
-    showLoader(false);
+    // Create user in firestore database
+    setDoc(user.Sb.uid, user)
+    
+    
+    
+
+
+    // appendUserData(user);
+    // hideTabbar(false);
+    // showLoader(false);
 }
 
 function userNotAuthenticated() {
@@ -115,6 +160,7 @@ function userNotAuthenticated() {
         tabbar.classList.remove("hide");
     }
 } */
+
 
 
 // sign out user

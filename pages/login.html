@@ -17,65 +17,48 @@
 </head>
 
 <body>
+    
+    <main id="login" class="page">
 
-    <header id="headerElement" class="center">
-        <div id="balancecoins" class="displaynone coins hidden">
-            <p>2357 <span>coins</span></p>
+        <h1 class="title">Login</h1>
+        <!-- <section id="login-page">
+            <div class="login-content">
+                <div class="login-fields">
+                    <input placeholder="Username" id="login" class="input-field"></input>
+                    <input placeholder="Password" id="password" class="input-field"></input>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" class="checkbox">
+                    <h5 class="">Remember Me</h5>
+                </div>
+                <button onclick="selectUser()" class="login-button">
+                    Login
+                </button>
+                <div class="need-container">
+                    <p class="need">Need an account?</p>
+                    <a class="need-blue" href="">Sign up</a>
+                </div>
+            </div>
+        </section> -->
+        <section id="login" class="page">
+            <header class="topbar">
+                <h2>Login</h2>
+            </header>
+            <!-- firebase auth container  -->
+            <section id="firebaseui-auth-container"></section>
+        </section>
+        <div id="loader">
+            <div class="spinner"></div>
         </div>
-        <img class="trademark betfree-logo" src="../icons/betfree-colorgradient.svg" alt="BetFree Trademark">
-        <nav class="main-navigation">
-            <div tabindex="3" id="menuIcon" class="menu-icon icon-active">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-
-            <ul class="navigation-list">
-                <li class="item list-item"><a href="#">Home</a></li>
-                <li class="item list-item"><a href="#">Profil</a></li>
-                <li class="item list-item"><a href="#">Leaderboard</a></li>
-                <li class="item list-item"><a href="#">Information</a></li>
-                <li class="item list-item"><a href="#">My Bets</a> </li>
-            </ul>
-        </nav>
-    </header>
-    <h1 class="title">Login</h1>
-    <section id="login-page">
-        <div class="login-content">
-            <div class="login-fields">
-                <input placeholder="Username" id="login" class="input-field"></input>
-                <input placeholder="Password" id="password" class="input-field"></input>
-            </div>
-            <div class="remember">
-                <input type="checkbox" class="checkbox">
-                <h5 class="">Remember Me</h5>
-            </div>
-            <button onclick="selectUser()" class="login-button">
-                Login
-            </button>
-            <div class="need-container">
-                <p class="need">Need an account?</p>
-                <a class="need-blue" href="">Sign up</a>
-            </div>
-        </div>
-    </section>
-    <section id="login" class="page">
-        <header class="topbar">
-            <h2>Login</h2>
-        </header>
-        <!-- firebase auth container  -->
-        <section id="firebaseui-auth-container"></section>
-    </section>
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
+    </main>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script type="text/javascript" src="../js/menuicon.js"></script>
+    
+
     <script type="text/javascript" src="../js/firebase.js"></script>
 </body>
 
