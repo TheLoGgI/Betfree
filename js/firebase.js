@@ -146,8 +146,11 @@ function userNotAuthenticated() {
     // Init Firebase UI Authentication
     if (!_firebaseUI) {
         _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
+        console.log('auth')
     }
     _firebaseUI.start('#firebaseui-auth-container', uiConfig);
+    console.log('home')
+    showPage('home')
     /* showLoader(false); */
 }
 

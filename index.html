@@ -42,6 +42,7 @@
                 <li class="item list-item"><a href="#info">Information</a></li>
                 <li class="item list-item"><a href="#mybets">My Bets</a> </li>
             </ul>
+            <button onclick="logout()">Logout</button>
         </nav>
     </header>
     <main id="index" class="page">
@@ -52,8 +53,8 @@
                     <h1>Bet for fun with friends</h1>
                     <p>Bet free of charge to earn points and get a place on the leaderboard </p>
                     <div class="indexpage-buttons">
-                        <button class="btn btn-primary" onclick="window.location.hash='signin'">Sign up</button>
-                        <button class="btn btn-secoundary" onclick="window.location.hash='signin'">Login</button>
+                        <button class="btn btn-primary" onclick="window.location.hash='login'">Sign up</button>
+                        <button class="btn btn-secoundary" onclick="window.location.hash='login'">Login</button>
                     </div>
                 </div>
             </div>
@@ -106,8 +107,18 @@
 
     <script type="text/javascript" src="./js/spa.js"></script>
     <script type="text/javascript" src="./js/menuicon.js"></script>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script type="text/javascript" src="./js/glider.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    
+    <script type="text/javascript" src="../js/firebase.js"></script>
     <!-- <script type="text/javascript" src="./js/main.js"></script> -->
 </body>
 
