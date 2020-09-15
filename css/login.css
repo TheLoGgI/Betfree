@@ -1,3 +1,10 @@
+.center{
+    justify-content: center;
+}
+
+.displaynone{
+    display: none;
+}
 #login-page{
 display: flex;
 justify-content: center;
@@ -101,6 +108,7 @@ iframe{
     justify-content: space-around;
     height: 50px;
     padding: 13px;
+    font-size: 13px;
 }
 
 .match-bets{
