@@ -73,6 +73,7 @@ let _firebaseUI;
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) { // if user exists and is authenticated
         userAuthenticated(user);
+        console.log(user)
     } else { // if user is not logged in
         userNotAuthenticated();
     }
