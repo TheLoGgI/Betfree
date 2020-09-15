@@ -12,14 +12,18 @@ fetch(URL)
     })
     .then(function (data) {
         console.log(data);
+        sportData = data
         appendPosts(data.data);
+
+        const btns = document.querySelectorAll('.gamebet__btn button');
+        console.log(btns);
     })
+
 
 
 function appendPosts(posts) {
     let htmlTemplate = "";
     for (const post of posts) {
-        let date = new Date(post.commence_time);
         let odds1 = post.sites[2].odds.h2h[0];
         let oddsX = post.sites[2].odds.h2h[1];
         let odds2 = post.sites[2].odds.h2h[2];
@@ -29,15 +33,15 @@ function appendPosts(posts) {
 
 
         htmlTemplate += /*html*/ `
-        <div class="game-event">
+        <div class="game-event" id="">
             <div class="event-label">
-                <p>${date.toString()}</p>
+                <p>${getRandomDate()}</p>
                 <p>${liga}</p>
             </div>
             <div class="populargames__gamebet">
                 <div class="gamebet__gameinfo">
                     <p>${team1}</p>
-                    <img src="../icons/sports/football-helmet.svg" alt="American Football Icon">
+                    <img src="../icons/sports/football.svg" alt="Football Icon">
                     <p>${team2}</p>
                 </div>
                 <div class="gamebet__btn">
@@ -52,21 +56,15 @@ function appendPosts(posts) {
     document.querySelector("#indhold").innerHTML = htmlTemplate;
 }
 
-function getTime() {
-    let date
-    const randomDate = Math.random(Math.random() * 32);
-    const randomDay = Math.random(Math.random() * 7);
-    return date
-}
-console.log(randomDate + randomDay);
-
-
-function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+function getRandomDate() {
+    const newDate = new Date()
+    newDate.setDate(getRandomInt(32))
+    newDate.setMonth(getRandomInt(12))
+    const date = newDate.toDateString().split(' ')
+    return `${date[0]}, ${date[2]}th of ${date[1]}`
 }
 
-console.log(randomDate(new Date(2020, 14, 9), new Date()));
-
-
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
 

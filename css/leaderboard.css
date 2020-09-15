@@ -11,18 +11,19 @@
     background-color: white;
   color: black;
   padding: 10px 32px;
+  border: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
   margin: 4px;
   cursor: pointer;
-  width: 250px
+  width: 250px;
 }
 
 .button:focus {
     background-color: #FF4D13;
-    color: white
+    color: white;
 }
 
 .rankings {

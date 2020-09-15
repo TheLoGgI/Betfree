@@ -2,6 +2,10 @@
     padding: 1.5rem;
 }
 
+body {
+padding-bottom: 80px;
+}
+
 .input-search {
     width: 100%;
     padding: .5rem 1rem;
@@ -150,12 +154,14 @@
     padding: .2em 1em;
    color: wheat;
    cursor: pointer;
+   font-size: 16px;
 }
 
 .gamebet__gameinfo, .gamebet__btn {
     padding: .6em 1em;
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
     /* line-height: 2.5em; */
 }
 
