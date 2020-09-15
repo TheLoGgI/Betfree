@@ -15,6 +15,7 @@ fetch(URL)
         appendPosts(data.data);
     })
 
+
 function appendPosts(posts) {
     let htmlTemplate = "";
     for (const post of posts) {
@@ -50,6 +51,22 @@ function appendPosts(posts) {
     }
     document.querySelector("#indhold").innerHTML = htmlTemplate;
 }
+
+function getTime() {
+    let date
+    const randomDate = Math.random(Math.random() * 32);
+    const randomDay = Math.random(Math.random() * 7);
+    return date
+}
+console.log(randomDate + randomDay);
+
+
+function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+console.log(randomDate(new Date(2020, 14, 9), new Date()));
+
 
 
 
