@@ -33,12 +33,13 @@
 }
 
 .btn {
-    background-color: var(--clr-main);
+    background-color: var(--clr-secondry);
     padding: .6em 1em;
     font-size: clamp(.8rem, 3vw, 1rem);
     font-weight: bold;
     border-radius: var(--radius-size);
     margin-top: 2rem;
+    transition: background .1s ease, color .1s ease;
 }
 
 .btn-primary {
@@ -46,11 +47,24 @@
     margin-right: 1rem;
 }
 
+.btn-primary:hover,
+.btn-primary:focus{
+    background-color: var(--clr-main);
+    color: white;
+}
+
 .btn-secoundary {
     padding: .4em 1em;
-    border: 3px solid var(--clr-main);
+    border: 3px solid var(--clr-secondry);
     background-color: transparent;
-    color: var(--clr-main);
+    color: var(--clr-secondry);
+}
+
+.btn-secoundary:hover,
+.btn-secoundary:focus {
+    border: 3px solid var(--clr-main);
+    background-color: var(--clr-main);
+    color: white;
 }
 
 /* ****************************
