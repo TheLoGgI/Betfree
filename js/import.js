@@ -35,7 +35,7 @@ class Import {
         fetch(path)
             .then(response => response.text())
             .then(data => {
-                const doc = new DOMParser().parseFromString(data, "text/html").body.querySelector('main')
+                const doc = new DOMParser().parseFromString(data, "text/html").body.querySelector('section')
                 self.insertAdjacentElement('beforebegin', doc)
                 this.removeElement(self)
 

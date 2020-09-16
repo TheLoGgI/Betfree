@@ -86,8 +86,12 @@ border: none;
     position: fixed;
     bottom: -375px;
     width: 100%;
+    animation-name: Appear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
-.placebetAppear{
-    transform: translateX(500px);
+@keyframes Appear {
+  from {bottom: -375px;}
+  to {bottom: 100px;}
 }
