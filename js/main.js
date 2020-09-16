@@ -1,23 +1,23 @@
 //let url = 'https://api.the-odds-api.com/v3/sports/?apiKey=';
-let key = 'fcb7c4adb099134a1854cf9b25f0331d'
-let region = 'eu'
-let sport = 'soccer_denmark_superliga'
-let URL = `https://api.the-odds-api.com/v3/odds/?apiKey=${key}&sport=${sport}&region=${region}`
+const key = 'fcb7c4adb099134a1854cf9b25f0331d'
+const region = 'eu'
+const sport = 'soccer_denmark_superliga'
+const URL = `https://api.the-odds-api.com/v3/odds/?apiKey=${key}&sport=${sport}&region=${region}`
 let sportData
 
-fetch(URL)
-    .then(function (data) {
-        console.log(data);
-        return data.json()
-    })
-    .then(function (data) {
-        console.log(data);
-        sportData = data
-        appendPosts(data.data);
+// fetch(URL)
+//     .then(function (data) {
+//         console.log(data);
+//         return data.json()
+//     })
+//     .then(function (data) {
+//         console.log(data);
+//         sportData = data
+//         appendPosts(data.data);
 
-        const btns = document.querySelectorAll('.gamebet__btn button');
-        console.log(btns);
-    })
+//         const btns = document.querySelectorAll('.gamebet__btn button');
+//         console.log(btns);
+//     })
 
 
 
@@ -66,5 +66,11 @@ function getRandomDate() {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
+}
+
+
+function updateBalance(newBalance) {
+    const balance = document.getElementById('balancecoins')
+    balance.textContent = `${newBalance} coins`
 }
 

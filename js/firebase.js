@@ -18,7 +18,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const userRef = db.collection("users");
 
-let selectedUserId = "";
+let userLoggedIn = "";
 
 // ========== READ ==========
 // watch the database ref for changes
@@ -26,9 +26,10 @@ userRef.onSnapshot(function (snapshotData) {
     let users = [];
     snapshotData.forEach(function (doc) {
         let user = doc.data();
-        // console.log(user);
-        user.id = doc.id;
+        // user.id = doc.id;
+        console.log(user);
         // users.push(user);
+    
     });
 });
 
@@ -74,22 +75,23 @@ let _firebaseUI;
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) { // if user exists and is authenticated
         userAuthenticated(user);
-        // console.log(user)
-
+        userLoggedIn = user.uid
+        
         
     } else { // if user is not logged in
         userNotAuthenticated();
     }
 });
 
+
 function setDoc(userID, accountInfo) {
-    console.log(userID, accountInfo.email);
     db.collection("user").doc(userID).set({
         uid: userID,
         mail: accountInfo.email,
         currency: 500,
     }).then(function() {
         console.log("Document successfully written!");
+
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
@@ -106,10 +108,12 @@ function getDoc(userID) {
     docRef.get().then(function(doc) {
         if (doc.exists) {
             console.log("Document data:", doc.data());
-            return doc.data()
+            updateBalance(doc.data().currency)
+            // return doc.data()
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
+            return null
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
@@ -119,7 +123,14 @@ function getDoc(userID) {
 
 function userAuthenticated(user) {
     // Create user in firestore database
-    setDoc(user.Sb.uid, user)
+    
+
+    if (!user) {
+        setDoc(user.Sb.uid, user)
+    } else {
+        getDoc(userLoggedIn)
+    }
+
     
     // appendUserData(user);
     // hideTabbar(false);
@@ -142,12 +153,9 @@ function userNotAuthenticated() {
     // Init Firebase UI Authentication
     if (!_firebaseUI) {
         _firebaseUI = new firebaseui.auth.AuthUI(firebase.auth());
-        console.log('auth')
     }
     _firebaseUI.start('#firebaseui-auth-container', uiConfig);
-    console.log('home')
-    // showPage('home')
-    /* showLoader(false); */
+
 }
 
 // sign out user
