@@ -14,11 +14,12 @@
     <title>BetFree - Free Easy Betting</title>
     <link href="./css/commen.css" rel="stylesheet" />
     <link href="./css/index.css" rel="stylesheet" />
-    <link href="../css/style.home.css" rel="stylesheet" />
+    <link href="./css/style.home.css" rel="stylesheet" />
     <link href="./css/info.css" rel="stylesheet" />
-    <link href="../css/login.css" rel="stylesheet" />
+    <link href="./css/login.css" rel="stylesheet" />
     <link href="./css/profile.css" rel="stylesheet" />
     <link href="./css/leaderboard.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 
 <body onhashchange="pageChange()">
@@ -27,7 +28,9 @@
         <div id="balancecoins" class="coins hidden">
             <p>2357 <span>coins</span></p>
         </div>
+
         <img class="trademark betfree-logo" src="./icons/betfree-colorgradient.svg" alt="BetFree Trademark">
+        
 
         <div tabindex="3" id="menuIcon" class="menu-icon active">
             <div class="line1"></div>
@@ -45,65 +48,79 @@
             <button onclick="logout()">Logout</button>
         </nav>
     </header>
-    <main id="index" class="page">
+    <main>
+        <section id="index" class="page">
 
-        <section id="indexpage">
-            <div class="indexpage-hero">
-                <div class="indexpage-content">
-                    <h1>Bet for fun with friends</h1>
-                    <p>Bet free of charge to earn points and get a place on the leaderboard </p>
-                    <div class="indexpage-buttons">
-                        <button class="btn btn-primary" onclick="window.location.hash='login'">Sign up</button>
-                        <button class="btn btn-secoundary" onclick="window.location.hash='login'">Login</button>
+            <section id="indexpage">
+                <div class="indexpage-hero">
+                    <div class="indexpage-content">
+                        <h1>Bet for fun with friends</h1>
+                        <p>Bet free of charge to earn points and get a place on the leaderboard </p>
+                        <div class="indexpage-buttons">
+                            <button class="btn btn-primary" onclick="window.location.hash='login'">Sign up</button>
+                            <button class="btn btn-secoundary" onclick="window.location.hash='login'">Login</button>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <div id="description" class="index-description">
+
+                <section class="description-section">
+                    <h2>Compete With Friends</h2>
+                    <div class="section-content">
+                        <p>Play against or together with your friends to see who can climb the highest on the
+                            leaderboard.
+                        </p>
+                        <img src="./images/play-togther.jpg" alt="play togther image">
+                    </div>
+
+                </section>
+                <section class="description-section ">
+                    <h2>Earn Coins</h2>
+                    <div class="section-content reverse">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt
+                            ut labore et.</p>
+                        <img src="./images/coins.jpg" alt="Get a place on the leaderboard">
+                    </div>
+
+                </section>
+                <section class="description-section">
+                    <h2>Get a place on the leaderboards</h2>
+                    <div class="section-content">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt
+                            ut labore et.</p>
+                        <img src="./images/leaderboard.jpg" alt="Get a place on the leaderboard">
+                    </div>
+
+                </section>
             </div>
         </section>
-        <div id="description" class="index-description">
+        <div import href="./pages/home.html"></div>
+        <div import href="./pages/info.html"></div>
+        <section id="login" class="page">
+            <h1 class="title">Login</h1>
+          
+            <!-- firebase auth container  -->
+            <section id="firebaseui-auth-container"></section>
 
-            <section class="description-section">
-                <h2>Compete With Friends</h2>
-                <div class="section-content">
-                    <p>Play against or together with your friends to see who can climb the highest on the leaderboard.
-                    </p>
-                    <img src="./images/play-togther.jpg" alt="play togther image">
-                </div>
-
-            </section>
-            <section class="description-section ">
-                <h2>Earn Coins</h2>
-                <div class="section-content reverse">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et.</p>
-                    <img src="./images/coins.jpg" alt="Get a place on the leaderboard">
-                </div>
-
-            </section>
-            <section class="description-section">
-                <h2>Get a place on the leaderboards</h2>
-                <div class="section-content">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et.</p>
-                    <img src="./images/leaderboard.jpg" alt="Get a place on the leaderboard">
-                </div>
-
-            </section>
-        </div>
+        </section>
+        <div import href="./pages/matchpage.html"></div>
+        <div import href="./pages/mybets.html"></div>
+        <div import href="./pages/leaderboard.html"></div>
+        <div import href="./pages/profil.html"></div>
+        
     </main>
+    
     <footer class="menu">
         <img class="menu-icon" src="../icons/back.svg">
-        <img class="menu-icon" src="../icons/user.svg" href="./profil.html">
-        <img class="menu-icon" src="../icons/award.svg" href="./leaderboard.html">
-        <img class="menu-icon" src="../icons/bill.svg" href="./mybets.html">
+        <img class="menu-icon" src="../icons/user.svg">
+        <img class="menu-icon" src="../icons/award.svg">
+        <img class="menu-icon" src="../icons/bill.svg">
     </footer>
 
-    <div import href="./pages/home.html"></div>
-    <div import href="./pages/info.html"></div>
-    <div import href="./pages/login.html"></div>
-    <div import href="./pages/matchpage.html"></div>
-    <div import href="./pages/mybets.html"></div>
-    <div import href="./pages/leaderboard.html"></div>
-    <div import href="./pages/profil.html"></div>
+    
 
     <script type="text/javascript" src="./js/spa.js"></script>
     <script type="text/javascript" src="./js/menuicon.js"></script>
@@ -117,9 +134,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    
+
     <script type="text/javascript" src="../js/firebase.js"></script>
-    <!-- <script type="text/javascript" src="./js/main.js"></script> -->
+    <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>
