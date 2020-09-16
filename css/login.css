@@ -291,3 +291,12 @@ text-align: center;
 .form__label-inline {
     display: inline;
 }
+
+.cancel-button:hover{
+color: #fff;
+}
+
+.match-button:focus {
+    background-color: var(--clr-main);
+    color: white;
+}
