@@ -162,11 +162,15 @@ padding-bottom: 80px;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    position: relative;
     /* line-height: 2.5em; */
 }
 
 .gamebet__gameinfo img {
     width: 1.44rem;
+    position: absolute;
+    margin-left: 42%;
+    
 }
 
 .gamebet__btn {
