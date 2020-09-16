@@ -34,7 +34,7 @@
 }
 
 /*stats*/
-.profile-stats, #headline-achivements  {
+.profile-stats, .headline-achivements  {
     margin-left: 15px;
 }
 
@@ -49,11 +49,16 @@
     justify-content: center;
 }
 
-.achievements {
-    display: flex;
+.button-achievements {
     margin: 3px;
+    padding-left: 4px;
     background-color: #FFBEA9;
+    text-align: center;
+    border: none;
     padding: 5px 5px;
     width: 180px;
-    
+}
+
+.achievement-icon {
+    width: 23px;
 }
