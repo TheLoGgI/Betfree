@@ -121,10 +121,6 @@ function userAuthenticated(user) {
     // Create user in firestore database
     setDoc(user.Sb.uid, user)
     
-    
-    
-
-
     // appendUserData(user);
     // hideTabbar(false);
     // showLoader(false);
@@ -132,7 +128,7 @@ function userAuthenticated(user) {
 
 function userNotAuthenticated() {
 
-    /* showPage("login"); */
+    // showPage("login"); 
 
     // Firebase UI configuration
     const uiConfig = {
@@ -150,25 +146,15 @@ function userNotAuthenticated() {
     }
     _firebaseUI.start('#firebaseui-auth-container', uiConfig);
     console.log('home')
-    showPage('home')
+    // showPage('home')
     /* showLoader(false); */
 }
 
-// show and hide tabbar
-/* function hideTabbar(hide) {
-    let tabbar = document.querySelector('#tabbar');
-    if (hide) {
-        tabbar.classList.add("hide");
-    } else {
-        tabbar.classList.remove("hide");
-    }
-} */
-
-
-
 // sign out user
 function logout() {
+    console.log('logged out');
     firebase.auth().signOut();
+    showPage('index')
 }
 
 function appendUserData(user) {
