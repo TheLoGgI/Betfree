@@ -7,11 +7,11 @@
     align-items: center;
 }
 
-.button {
+.button-leaderboard {
     background-color: white;
   color: black;
   padding: 10px 32px;
-  border: black;
+  border-color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -21,7 +21,7 @@
   width: 250px;
 }
 
-.button:focus {
+.button-leaderboard:focus {
     background-color: #FF4D13;
     color: white;
 }
