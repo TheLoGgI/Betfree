@@ -87,11 +87,11 @@ border: none;
     bottom: -375px;
     width: 100%;
     animation-name: Appear;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 @keyframes Appear {
   from {bottom: -375px;}
-  to {bottom: 100px;}
+  to {bottom: 0px;}
 }

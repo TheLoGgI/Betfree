@@ -30,7 +30,7 @@
         </div>
 
         <img class="trademark betfree-logo" src="./icons/betfree-colorgradient.svg" alt="BetFree Trademark">
-        
+
 
         <div tabindex="3" id="menuIcon" class="menu-icon active">
             <div class="line1"></div>
@@ -101,7 +101,7 @@
         <div import href="./pages/info.html"></div>
         <section id="login" class="page">
             <h1 class="title">Login</h1>
-          
+
             <!-- firebase auth container  -->
             <section id="firebaseui-auth-container"></section>
 
@@ -110,9 +110,30 @@
         <div import href="./pages/mybets.html"></div>
         <div import href="./pages/leaderboard.html"></div>
         <div import href="./pages/profil.html"></div>
-        
+        <section id="placebet" class="page">
+
+            <div class="coupon-title">
+                <p>Coupon</p>
+                <p>Match winner - Man Utd</p>
+            </div>
+            <div class="placebet-content">
+                <div class="amount">
+                    <input type="number" placeholder="200 coins" id="input" class="bet-coins"></input>
+                    <p class="center">x1.4</p>
+                </div>
+                <div>
+                    <p class="center">Reward 280 coins</p>
+                </div>
+            </div>
+            <div class="coupon-details">
+                <button class="decline">Decline</button>
+                <button class="place-a-bet">Place a bet</button>
+            </div>
+
+        </section>
+
     </main>
-    
+
     <footer class="menu">
         <img class="menu-icon" src="../icons/back.svg">
         <img class="menu-icon" src="../icons/user.svg">
@@ -120,7 +141,7 @@
         <img class="menu-icon" src="../icons/bill.svg">
     </footer>
 
-    
+
 
     <script type="text/javascript" src="./js/spa.js"></script>
     <script type="text/javascript" src="./js/menuicon.js"></script>
@@ -136,6 +157,7 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 
     <script type="text/javascript" src="../js/firebase.js"></script>
+    <script type="text/javascript" src="./js/placebet.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
