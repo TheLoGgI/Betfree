@@ -31,6 +31,10 @@
     display: flex;
     align-items: center;
     padding: 0px 5px;
+    width: 120px;
+    font-size: 18px;
+    border: none;
+    color: black;
 }
 
 .center{
@@ -38,18 +42,30 @@
     align-items: center;
 }
 
-.coupon-orange {
+.decline {
     background-color: var(--clr-main);
     width: 100%;
     color: white;
     padding: 10px;
     text-align: center;
+    cursor: pointer;
+    border: none;
+}
+.decline:focus ,.decline:hover {
+    color: black;
 }
 
-.coupon-white {
+.place-a-bet {
     width: 100%;
     padding: 10px;
     text-align: center;
+    background: white;
+    cursor: pointer;
+border: none;
+}
+
+.place-a-bet:focus ,.place-a-bet:hover {
+    color: var(--clr-main);
 }
 
 .coupon-details {
@@ -63,5 +79,15 @@
 }
 
 .opacity{
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.placebet{
+    position: fixed;
+    bottom: -375px;
+    width: 100%;
+}
+
+.placebetAppear{
+    transform: translateX(500px);
 }
