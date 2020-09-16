@@ -56,4 +56,5 @@ h4 {
     align-content: center;
     position: fixed;
     bottom: 0;
+    z-index: 9999999;
 }
