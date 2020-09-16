@@ -84,6 +84,10 @@ border: none;
 
 .placebet{
     position: fixed;
-    bottom: 100px;
+    bottom: -375px;
     width: 100%;
+}
+
+.placebetAppear{
+    transform: translateX(500px);
 }
