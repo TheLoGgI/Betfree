@@ -16,7 +16,7 @@
     width: 20px;
 }
 
-.button {
+.button-profile {
   background-color: #FFBEA9;
   border: none;
   color: black;
@@ -43,7 +43,7 @@
 }
 
 /*achivements*/
-.headline {
+.headline-achivements {
     margin-left: 15px;
 }
 
@@ -55,8 +55,8 @@
 
 .achievements {
     display: flex;
-    margin: 5px;
+    margin: 3px;
     background-color: #FFBEA9;
-    padding: 10px 10px;
+    padding: 5px 5px;
     
 }
