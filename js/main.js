@@ -24,12 +24,12 @@ let sportData
 function appendPosts(posts) {
     let htmlTemplate = "";
     for (const post of posts) {
-        let odds1 = post.sites[2].odds.h2h[0];
-        let oddsX = post.sites[2].odds.h2h[1];
-        let odds2 = post.sites[2].odds.h2h[2];
-        let team1 = post.teams[0];
-        let team2 = post.teams[1];
-        let liga = post.sport_nice;
+        const odds1 = post.sites[2].odds.h2h[0];
+        const oddsX = post.sites[2].odds.h2h[1];
+        const odds2 = post.sites[2].odds.h2h[2];
+        const team1 = post.teams[0];
+        const team2 = post.teams[1];
+        const liga = post.sport_nice;
 
 
         htmlTemplate += /*html*/ `

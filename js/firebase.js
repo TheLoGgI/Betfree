@@ -1,6 +1,4 @@
 "use strict";
-
-console.log('firebase js');
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
@@ -17,130 +15,97 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const userRef = db.collection("users");
-
-let userLoggedIn = "";
+let _firebaseUI;
 
 // ========== READ ==========
 // watch the database ref for changes
-userRef.onSnapshot(function (snapshotData) {
-    let users = [];
-    snapshotData.forEach(function (doc) {
-        let user = doc.data();
-        // user.id = doc.id;
-        console.log(user);
-        // users.push(user);
+// userRef.onSnapshot(function (snapshotData) {
+//     console.log('onSnapshot updated');
+//     let users = [];
+//     snapshotData.forEach(function (doc) {
+//         let user = doc.data();
+//         // user.id = doc.id;
+//         console.log(user);
+//         // users.push(user);
     
-    });
-});
+//     });
+// });
 
-// ========== CREATE ==========
 // add a new user to firestore (database)
-function createUser() {
-    // references to the input fields
-    let nameInput = document.querySelector('#login');
-    let mailInput = document.querySelector('#password');
-    console.log(nameInput.value);
-    console.log(mailInput.value);
-
-    let newUser = {
-        name: nameInput.value,
-        mail: mailInput.value
-    };
-
-    userRef.add(newUser);
-}
-
-// ========== UPDATE ==========
-
-let loggedin = false;
-
-function checkDB() {
-
-}
-
-function selectUser(id, login, password) {
-    // references to the input fields
-    let nameInput = document.querySelector('#login');
-    let mailInput = document.querySelector('#password');
-    nameInput.value = login;
-    mailInput.value = password;
-    selectedUserId = id;
-}
-
-// ========== Firebase sign in functionality ========== //
-let _firebaseUI;
-
-// ========== FIREBASE AUTH ========== //
-// Listen on authentication state change
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) { // if user exists and is authenticated
-        userAuthenticated(user);
-        userLoggedIn = user.uid
-        
-        
-    } else { // if user is not logged in
-        userNotAuthenticated();
-    }
-});
-
-
-function setDoc(userID, accountInfo) {
-    db.collection("user").doc(userID).set({
+function createUser(userID, email, currency = 500) {
+    userRef.add({
         uid: userID,
-        mail: accountInfo.email,
-        currency: 500,
-    }).then(function() {
-        console.log("Document successfully written!");
-
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
+        mail: email,
+        currency: currency,
     });
+
     return {
         uid: userID,
-        mail: accountInfo.email,
-        currency: 500,
+        mail: email,
+        currency: currency,
     }
 }
 
-function getDoc(userID) {
-    const docRef = db.collection("user").doc(userID);
-    docRef.get().then(function(doc) {
+
+async function getDoc(currentUser) {
+    console.log(currentUser);
+    const docRef = db.collection("user").doc(currentUser.uid);
+    console.log(docRef);
+    return await docRef.get().then(function(doc) {
         if (doc.exists) {
-            console.log("Document data:", doc.data());
-            updateBalance(doc.data().currency)
-            // return doc.data()
+            return doc.data()
+
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
-            return null
+            return createUser(currentUser.uid, currentUser.Sb.email)
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
-    
+
 }
 
-function userAuthenticated(user) {
-    // Create user in firestore database
-    
-
-    if (!user) {
-        setDoc(user.Sb.uid, user)
-    } else {
-        getDoc(userLoggedIn)
+// ========== FIREBASE AUTH ========== //
+// Listen on authentication state change
+firebase.auth().onAuthStateChanged(async function (user) {
+    if (user) { // if user exists and is authenticated
+        console.log('user exists');
+        const userdoc = await getDoc(user)
+        updateBalance(userdoc.currency)
+        console.log(userdoc);
+        
+        
+    } else { // if user is not logged in
+        console.log('user not logged in');
+        userNotAuthenticated();
     }
+});
 
-    
-    // appendUserData(user);
-    // hideTabbar(false);
-    // showLoader(false);
-}
+// Update user balance after win or payment **************
+
+// function setDoc(userID, accountInfo) {
+//     db.collection("user").doc(userID).set({
+//         uid: userID,
+//         mail: accountInfo.email,
+//         currency: 500,
+//     }).then(function() {
+//         console.log("Document successfully written!");
+
+//     })
+//     .catch(function(error) {
+//         console.error("Error writing document: ", error);
+//     });
+//     return {
+//         uid: userID,
+//         mail: accountInfo.email,
+//         currency: 500,
+//     }
+// }
+
+
 
 function userNotAuthenticated() {
-
-    // showPage("login"); 
-
     // Firebase UI configuration
     const uiConfig = {
         credentialHelper: firebaseui.auth.CredentialHelper.NONE,
@@ -156,6 +121,7 @@ function userNotAuthenticated() {
     }
     _firebaseUI.start('#firebaseui-auth-container', uiConfig);
 
+    updateBalance(0)
 }
 
 // sign out user
@@ -163,11 +129,4 @@ function logout() {
     console.log('logged out');
     firebase.auth().signOut();
     showPage('index')
-}
-
-function appendUserData(user) {
-    document.querySelector('#profile').innerHTML += `
-    <h3>${user.displayName}</h3>
-    <p>${user.email}</p>
-  `;
 }

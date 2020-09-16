@@ -42,10 +42,10 @@
     align-items: center;
 }
 
-.decline {
-    background-color: var(--clr-main);
+.decline-btn {
+    background-color: var(--clr-bg);
     width: 100%;
-    color: white;
+    color: black;
     padding: 10px;
     text-align: center;
     cursor: pointer;
@@ -55,13 +55,14 @@
     color: black;
 }
 
-.place-a-bet {
+.bet-btn {
+    background-color: var(--clr-main);
+    color: white;
     width: 100%;
     padding: 10px;
     text-align: center;
-    background: white;
     cursor: pointer;
-border: none;
+    border: none;
 }
 
 .place-a-bet:focus ,.place-a-bet:hover {
@@ -74,21 +75,14 @@ border: none;
     justify-content: space-around;
 }
 
-#headerElement{
-    display: none;
-}
-
-.opacity{
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
 .placebet{
     position: fixed;
-    bottom: -375px;
+    bottom: 0px;
     width: 100%;
-    animation-name: Appear;
+    z-index: 30;
+    /* animation-name: Appear;
     animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 }
 
 @keyframes Appear {

@@ -19,6 +19,7 @@
     <link href="./css/login.css" rel="stylesheet" />
     <link href="./css/profile.css" rel="stylesheet" />
     <link href="./css/leaderboard.css" rel="stylesheet" />
+    <link href="../css/placebet.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 
@@ -110,8 +111,8 @@
         <div import href="./pages/mybets.html"></div>
         <div import href="./pages/leaderboard.html"></div>
         <div import href="./pages/profil.html"></div>
-        <section id="placebet" class="page">
-
+        
+        <div class="placebet">
             <div class="coupon-title">
                 <p>Coupon</p>
                 <p>Match winner - Man Utd</p>
@@ -121,16 +122,14 @@
                     <input type="number" placeholder="200 coins" id="input" class="bet-coins"></input>
                     <p class="center">x1.4</p>
                 </div>
-                <div>
-                    <p class="center">Reward 280 coins</p>
-                </div>
+                <p>Reward 280 coins</p>
             </div>
             <div class="coupon-details">
-                <button class="decline">Decline</button>
-                <button class="place-a-bet">Place a bet</button>
+                <button class="bet-btn">Place a bet</button>
+                <button class="decline-btn">Decline</button>
             </div>
 
-        </section>
+        </div>
 
     </main>
 
@@ -140,7 +139,6 @@
         <img class="menu-icon" src="../icons/award.svg">
         <img class="menu-icon" src="../icons/bill.svg">
     </footer>
-
 
 
     <script type="text/javascript" src="./js/spa.js"></script>

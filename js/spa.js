@@ -11,7 +11,6 @@ function hideAllPages() {
 // show page or tab
 function showPage(pageId) {
     hideAllPages();
-    console.log(pageId);
     document.querySelector(`#${pageId}`).style.display = "block";
     // setActiveTab(pageId);
 }
