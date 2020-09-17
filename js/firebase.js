@@ -19,17 +19,17 @@ let _firebaseUI;
 
 // ========== READ ==========
 // watch the database ref for changes
-// userRef.onSnapshot(function (snapshotData) {
-//     console.log('onSnapshot updated');
-//     let users = [];
-//     snapshotData.forEach(function (doc) {
-//         let user = doc.data();
-//         // user.id = doc.id;
-//         console.log(user);
-//         // users.push(user);
-    
-//     });
-// });
+function documentSnapShot(userUID) {
+    db.collection("user").doc(userUID)
+    .onSnapshot(function(doc) {
+        updateBalance(doc.data().AccountBalance )
+        console.log("Current data: ", doc.data());
+    });
+
+
+}
+
+
 
 // add a new user to firestore (database)
 // function createUser(userID, email, currency = 500) {
@@ -50,32 +50,43 @@ let _firebaseUI;
 // }
 
 function addBets(userID, updateProps) {
-    // db.collection("user").doc(userID).update(updateProps)
-    //     .then(function () {
-    //         console.log("Document successfully updated!");
-    //     })
-        db.collection('user').doc(userID).update({
-            betArray: firebase.firestore.FieldValue.arrayUnion(updateProps)
-        });
+    const json = JSON.stringify(updateProps)
+    db.collection('user').doc(userID).update({
+        betArray: firebase.firestore.FieldValue.arrayUnion(json)
+    });
 }
 
 
+
+// const json = {
+//     commence_time: 1600522200,
+//     sites: {
+//         last_update: 1600357189,
+//         odds:  ["0", "1.25", "5.5"],
+//         site_key: "unibet",
+//         site_nice: "Unibet"
+//     },
+//     sport_nice: "Denmark Superliga"
+// }
+
+
 async function getDoc(currentUser) {
-    // console.log(currentUser);
+
     const docRef = db.collection("user").doc(currentUser.uid);
-    console.log(currentUser)
-    return await docRef.get().then(function(doc) {
+
+    return await docRef.get().then(function (doc) {
         if (doc.exists) {
             console.log('Update user');
-                addBets(currentUser.uid, 'thisfunmichel', 7282392)
+            // const parsed = JSON.parse(JSON.parse(doc.data().betArray[2]))
+            // addBets(currentUser.uid, JSON.stringify(json))
             return doc.data()
 
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
-             return setDoc(currentUser.uid, currentUser.Sb.email)
+            return setDoc(currentUser.uid, currentUser.Sb.email)
         }
-    }).catch(function(error) {
+    }).catch(function (error) {
         console.log("Error getting document:", error);
     });
 
@@ -86,11 +97,9 @@ async function getDoc(currentUser) {
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) { // if user exists and is authenticated
         // console.log('user exists');
-        const userdoc = await getDoc(user)
-        console.log(userdoc);
-        updateBalance(userdoc.currency)
-        // console.log(userdoc);
-        
+        // const userdoc = await getDoc(user)
+        documentSnapShot(user.uid)
+
         
     } else { // if user is not logged in
         console.log('user not logged in');
@@ -102,21 +111,21 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
 function setDoc(userID, email) {
     db.collection("user").doc(userID).set({
-        uid: userID,
-        mail: email,
-        currency: 500,
-        betArray: []
-    }).then(function() {
-        console.log("Document successfully written!")
-            
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
+            uid: userID,
+            mail: email,
+            AccountBalance: 500,
+            betArray: []
+        }).then(function () {
+            console.log("Document successfully written!")
+
+        })
+        .catch(function (error) {
+            console.error("Error writing document: ", error);
+        });
     return {
         uid: userID,
         mail: email,
-        currency: 500,
+        AccountBalance: 500,
         betArray: []
     }
 }
@@ -140,6 +149,19 @@ function userNotAuthenticated() {
     _firebaseUI.start('#firebaseui-auth-container', uiConfig);
 
     updateBalance(0)
+}
+
+function updateAccountBalance(userID, newBalance) {
+    if (newBalance >= 0) {
+        db.collection('user').doc(userID).update({
+            AccountBalance: newBalance
+        });
+    } else {
+        const coins = document.getElementById('balancecoins').textContent.split(' ')[0]
+        db.collection('user').doc(userID).update({
+            AccountBalance: Number(coins) + newBalance
+        });
+    }
 }
 
 // sign out user
