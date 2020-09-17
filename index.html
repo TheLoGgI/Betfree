@@ -26,7 +26,7 @@
 <body onhashchange="pageChange()">
 
     <header id="headerElement">
-        <div  class="coins">
+        <div class="coins">
             <p id="balancecoins">2357 <span>coins</span></p>
         </div>
 
@@ -110,8 +110,82 @@
         <div import href="./pages/matchpage.html"></div>
         <div import href="./pages/mybets.html"></div>
         <div import href="./pages/leaderboard.html"></div>
-        <div import href="./pages/profil.html"></div>
-        
+        <section id="profil" class="page">
+
+            <section class="profil-section">
+                <div class="section-content">
+                    <img class="profile-picture" src="./icons/profile-icon.jpg" alt="profile picture">
+                    <div>
+                        <p><b>User Name:</b> someuser<b><br> Email:</b> exaple@hotmail.com</p>
+                        <button type="button" class="button-profile"><img class="invite-frinds"
+                                src="./icons/invite-frinds.jpg" alt="invite friends"> Invite Friends</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="change">
+                <p><u>Change profile picture</u></p>
+                <p><u>Change password</u></p>
+            </div>
+
+            <br>
+
+            <section class="profile-stats">
+                <h2>Stats:</h2>
+                <div class="stats">
+                    <p>Total win: 10.526</p>
+                    <p>Total loss: 4.589</p>
+                    <p>Difference: 5.937</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="headline-achivements">Achievements</h2>
+                <div id="achievementsFlexContainer" class="achievements-flex-container">
+                    <button type="button" class="button-achievements" data-knap="1">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Now you got it!</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="2">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Big spender</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="3">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>In the top</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="4">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Best in the land</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="5">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Best of the best</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="6">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Big loser</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="7">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Winner</p>
+                    </button>
+                    <button type="button" class="button-achievements" data-knap="8">
+                        <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                        <p>Ka-ching</p>
+                    </button>
+                </div>
+
+                <div id="popUpBox">
+                    <img class="achievement-icon" src="./icons/achievement-icon.jpg" alt="Achievements">
+                    <p id="popUpText">Win 10 times</p>
+                </div>
+
+            </section>
+
+            </div>
+        </section>
+
         <div class="placebet">
             <div class="coupon-title">
                 <p>Coupon</p>
@@ -157,6 +231,7 @@
     <script type="text/javascript" src="../js/firebase.js"></script>
     <script type="text/javascript" src="./js/placebet.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/profil.js"></script>
 </body>
 
 </html>

@@ -62,3 +62,29 @@
 .achievement-icon {
     width: 23px;
 }
+
+#popUpBox {
+    width: 200px;
+  background-color: rgb(221, 219, 219);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#close {
+        width: 15px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 15px;
+        cursor: pointer;
+    }
+
