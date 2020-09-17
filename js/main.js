@@ -74,3 +74,4 @@ function updateBalance(newBalance) {
     balance.textContent = `${newBalance} coins`
 }
 
+

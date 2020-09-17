@@ -14,7 +14,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const userRef = db.collection("users");
+const userRef = db.collection("user");
 let _firebaseUI;
 
 // ========== READ ==========
@@ -32,33 +32,48 @@ let _firebaseUI;
 // });
 
 // add a new user to firestore (database)
-function createUser(userID, email, currency = 500) {
-    userRef.add({
-        uid: userID,
-        mail: email,
-        currency: currency,
-    });
+// function createUser(userID, email, currency = 500) {
+//     userRef.add({
+//         uid: userID,
+//         mail: email,
+//         currency: currency,
+//         betArray: ['ghjksad','ghjaksdl', {help: 2131, uiop: 72828}]
+//     }); 
+//     console.log('User data Created');
 
-    return {
-        uid: userID,
-        mail: email,
-        currency: currency,
-    }
+//     return {
+//         uid: userID,
+//         mail: email,
+//         currency: currency,
+//         betArray: []
+//     }
+// }
+
+function addBets(userID, updateProps) {
+    // db.collection("user").doc(userID).update(updateProps)
+    //     .then(function () {
+    //         console.log("Document successfully updated!");
+    //     })
+        db.collection('user').doc(userID).update({
+            betArray: firebase.firestore.FieldValue.arrayUnion(updateProps)
+        });
 }
 
 
 async function getDoc(currentUser) {
-    console.log(currentUser);
+    // console.log(currentUser);
     const docRef = db.collection("user").doc(currentUser.uid);
-    console.log(docRef);
+    console.log(currentUser)
     return await docRef.get().then(function(doc) {
         if (doc.exists) {
+            console.log('Update user');
+                addBets(currentUser.uid, 'thisfunmichel', 7282392)
             return doc.data()
 
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
-            return createUser(currentUser.uid, currentUser.Sb.email)
+             return setDoc(currentUser.uid, currentUser.Sb.email)
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
@@ -70,10 +85,11 @@ async function getDoc(currentUser) {
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) { // if user exists and is authenticated
-        console.log('user exists');
+        // console.log('user exists');
         const userdoc = await getDoc(user)
-        updateBalance(userdoc.currency)
         console.log(userdoc);
+        updateBalance(userdoc.currency)
+        // console.log(userdoc);
         
         
     } else { // if user is not logged in
@@ -84,24 +100,26 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
 // Update user balance after win or payment **************
 
-// function setDoc(userID, accountInfo) {
-//     db.collection("user").doc(userID).set({
-//         uid: userID,
-//         mail: accountInfo.email,
-//         currency: 500,
-//     }).then(function() {
-//         console.log("Document successfully written!");
-
-//     })
-//     .catch(function(error) {
-//         console.error("Error writing document: ", error);
-//     });
-//     return {
-//         uid: userID,
-//         mail: accountInfo.email,
-//         currency: 500,
-//     }
-// }
+function setDoc(userID, email) {
+    db.collection("user").doc(userID).set({
+        uid: userID,
+        mail: email,
+        currency: 500,
+        betArray: []
+    }).then(function() {
+        console.log("Document successfully written!")
+            
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    return {
+        uid: userID,
+        mail: email,
+        currency: 500,
+        betArray: []
+    }
+}
 
 
 

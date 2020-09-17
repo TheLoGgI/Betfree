@@ -80,12 +80,10 @@
     bottom: 0px;
     width: 100%;
     z-index: 30;
-    /* animation-name: Appear;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; */
+    transform: translateY(120px);
+    transition: transform .3s ease;
 }
 
-@keyframes Appear {
-  from {bottom: -375px;}
-  to {bottom: 0px;}
+.show-bet {
+    transform: translateY(0px);
 }
