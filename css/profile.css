@@ -1,11 +1,7 @@
 @import url('./header.css');
 @import url('./menuicon.css');
 
-.section-content {
-    display: flex;
-    /* font-size: clamp(var(--fnt-size14), 20ch , var(--fnt-size16)); */
-    align-items: center;
-}
+
 /*profile*/
 .profile-picture {
     width: 150px;

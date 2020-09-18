@@ -93,7 +93,8 @@
 
 .section-content {
     display: flex;
-    /* font-size: clamp(var(--fnt-size14), 20ch , var(--fnt-size16)); */
+    align-items: center;
+    font-size: clamp(var(--fnt-size14), 4vw, var(--fnt-size16));
 }
 
 .section-content p {
