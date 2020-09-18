@@ -4,37 +4,58 @@ function myFunction(eEventKilde) {
     const popUpText = document.getElementById("popUpText");
     console.log(popUpText);
     console.log(popUpBox);
-    popUpText.textContent = arrayText[eEventKilde.target.dataset.knap - 1]
-    console.log(eEventKilde);
-}
+    popUpText.textContent = arrayText[eEventKilde.target.dataset.knap - 1 || 0]
 
-document.getElementById('achievementsFlexContainer').addEventListener('click', myFunction)
+    noBlur()
+
+}
+let nodeList = document.getElementsByClassName('button-achievements')
+console.log(nodeList);
+achievementHandler(nodeList)
+//document.getElementById('achievementsFlexContainer').addEventListener('click', myFunction)
 
 let arrayText = [
     'Win 10 times',
-    'Spend over 10.000 coins',
+    'Spend 10.000 coins',
     'Get on the frinds leaderboard',
     'Get on the country leaderboard',
     'Get on the world leaderboard',
-    'Lose over 10.000 coins',
+    'Lose 10.000 coins',
     'Win over 10.000 coins',
     'Win over 10.000 coins on one bet',
 ]
 
-/*function myFunction() {
-    var closePopUpBox = document.getElementById("popUpBox");
+function closePopUp() {
+    let closePopUpBox = document.getElementById("popUpBox");
     if (closePopUpBox.style.display === "none") {
         closePopUpBox.style.display = "block";
     } else {
         closePopUpBox.style.display = "none";
     }
-}*/
-
-function hide() {
-    if (eEventKilde != 'noclick') {
-        $("popUpBox").fadeOut(500, function myFunction() {
-            $(document).unbind("click");
-            $("popUpBox").data('shown', false);
-        });
-    }
 }
+let blur = document.getElementById("blur")
+blur.addEventListener('click', noBlur);
+
+function noBlur() {
+    if (blur.style.display === "none") {
+        blur.style.display = "block";
+    } else {
+        blur.style.display = "none";
+    }
+    closePopUp()
+
+}
+
+function achievementHandler(nodeList) {
+    console.log('dfghjkjhdfk');
+    for (const item of nodeList) {
+        item.addEventListener('click', myFunction)
+    }
+
+
+
+}
+
+
+
+
