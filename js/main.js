@@ -88,6 +88,10 @@ function collectData({data}) {
     }, [])
 }
 
+function goBack() {
+    window.history.back();
+}
+
 
 
 

@@ -13,7 +13,7 @@
 }
 
 .indexpage-hero h1{
-    font-size: clamp(1.4rem, 5vw, 2rem);;
+    font-size: clamp(1.8rem, 5vw, 2rem);;
     color: white;
 }
 
@@ -33,16 +33,18 @@
 }
 
 .btn {
-    background-color: var(--clr-secondry);
+    background-color: var(--clr-main);
     padding: .6em 1em;
     font-size: clamp(.8rem, 3vw, 1rem);
     font-weight: bold;
     border-radius: var(--radius-size);
     margin-top: 2rem;
     transition: background .1s ease, color .1s ease;
+    cursor: pointer;
 }
 
 .btn-primary {
+    color: white;
     border: none;
     margin-right: 1rem;
 }
@@ -50,19 +52,20 @@
 .btn-primary:hover,
 .btn-primary:focus{
     background-color: var(--clr-main);
+    opacity: .9;
     color: white;
 }
 
 .btn-secoundary {
     padding: .4em 1em;
-    border: 3px solid var(--clr-secondry);
+    border: var(--radius-size) solid var(--clr-secondry);
     background-color: transparent;
     color: var(--clr-secondry);
 }
 
 .btn-secoundary:hover,
 .btn-secoundary:focus {
-    border: 3px solid var(--clr-main);
+    border: var(--radius-size) solid var(--clr-main);
     background-color: var(--clr-main);
     color: white;
 }
