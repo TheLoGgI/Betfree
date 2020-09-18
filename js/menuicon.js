@@ -14,6 +14,7 @@ function clickHandler(elementID, className = 'active') {
 function classToggle(elementID, className) {
     document.getElementById(elementID)
         .classList.toggle(className)
+        return document.getElementById(elementID)
 }
 
 // Not in use
