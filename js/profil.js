@@ -21,3 +21,20 @@ let arrayText = [
     'Win over 10.000 coins on one bet',
 ]
 
+/*function myFunction() {
+    var closePopUpBox = document.getElementById("popUpBox");
+    if (closePopUpBox.style.display === "none") {
+        closePopUpBox.style.display = "block";
+    } else {
+        closePopUpBox.style.display = "none";
+    }
+}*/
+
+function hide() {
+    if (eEventKilde != 'noclick') {
+        $("popUpBox").fadeOut(500, function myFunction() {
+            $(document).unbind("click");
+            $("popUpBox").data('shown', false);
+        });
+    }
+}
