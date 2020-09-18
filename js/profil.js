@@ -10,7 +10,6 @@ function myFunction(eEventKilde) {
 
 }
 let nodeList = document.getElementsByClassName('button-achievements')
-console.log(nodeList);
 achievementHandler(nodeList)
 //document.getElementById('achievementsFlexContainer').addEventListener('click', myFunction)
 
@@ -47,7 +46,6 @@ function noBlur() {
 }
 
 function achievementHandler(nodeList) {
-    console.log('dfghjkjhdfk');
     for (const item of nodeList) {
         item.addEventListener('click', myFunction)
     }

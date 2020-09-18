@@ -96,13 +96,11 @@ async function getDoc(currentUser) {
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) { // if user exists and is authenticated
-        // console.log('user exists');
         // const userdoc = await getDoc(user)
         documentSnapShot(user.uid)
 
         
     } else { // if user is not logged in
-        console.log('user not logged in');
         userNotAuthenticated();
     }
 });

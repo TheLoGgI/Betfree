@@ -1,14 +1,13 @@
 
-// console.log(window.innerWidth);
-/* const glide = new Glide('.glide', {
+console.log(window.innerWidth);
+const glide = new Glide('.glide', {
     type: 'dragThreshold',
-    perView: 7,
+    perView: 5,
     breakpoints: {
-        // 600: {perView: 14},
     }
   })
 
-  glide.mount() */
+  glide.mount() 
 
 
 function getRandomDate() {

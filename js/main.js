@@ -10,11 +10,16 @@ fetch(URL)
         return data.json()
     })
     .then(function (data) {
-        sportData = collectData(data)
-        appendPosts(data.data);
-        console.log(sportData);
-        const btns = document.querySelectorAll('.gamebet__btn button');
-        bettingHandler(btns)
+        if (data.success) {
+            sportData =  collectData(data) 
+            appendPosts(data.data);
+            const btns = document.querySelectorAll('.gamebet__btn button');
+            bettingHandler(btns)
+        } else {
+            throw new Error('Data was not fetched - ' + data.msg)
+        }
+    }).catch(error => {
+        console.warn(error) 
     })
 
 
@@ -77,15 +82,19 @@ function updateBalance(newBalance) {
 
 function collectData({data}) {
     let i = 0
-    return data.reduce((acc, obj) => {
-        return [...acc, {
-            id: i++,
-            teams: [...obj.teams],
-            odds: [...obj.sites[0].odds.h2h],
-            league: obj.sport_nice,
-            date: getRandomDate()
-        }]
-    }, [])
+    if (data) {
+        return data.reduce((acc, obj) => {
+            return [...acc, {
+                id: i++,
+                teams: [...obj.teams],
+                odds: [...obj.sites[0].odds.h2h],
+                league: obj.sport_nice,
+                date: getRandomDate()
+            }]
+        }, [])
+    } else {
+        return {error: 'no data was collected'}
+    }
 }
 
 function goBack() {
