@@ -1,3 +1,4 @@
+// Made by Martin
 //let url = 'https://api.the-odds-api.com/v3/sports/?apiKey=';
 const key = 'fcb7c4adb099134a1854cf9b25f0331d'
 const region = 'eu'
@@ -79,7 +80,7 @@ function updateBalance(newBalance) {
     balance.textContent = `${newBalance} coins`
 }
 
-
+// Lasse
 function collectData({data}) {
     let i = 0
     if (data) {

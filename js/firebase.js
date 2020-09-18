@@ -1,5 +1,6 @@
 "use strict";
 // Your web app's Firebase configuration
+// Made by Lasse
 
 const firebaseConfig = {
     apiKey: "AIzaSyDFsOpP84x9nIEEIPUqb6jx1wNKDR4alzQ",
@@ -23,6 +24,7 @@ function documentSnapShot(userUID) {
     db.collection("user").doc(userUID)
     .onSnapshot(function(doc) {
         updateBalance(doc.data().AccountBalance )
+        appendBets(userUID)
         console.log("Current data: ", doc.data());
     });
 
@@ -70,9 +72,9 @@ function addBets(userID, updateProps) {
 // }
 
 
-async function getDoc(currentUser) {
+async function getDoc(uid) {
 
-    const docRef = db.collection("user").doc(currentUser.uid);
+    const docRef = db.collection("user").doc(uid);
 
     return await docRef.get().then(function (doc) {
         if (doc.exists) {
@@ -84,7 +86,7 @@ async function getDoc(currentUser) {
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
-            return setDoc(currentUser.uid, currentUser.Sb.email)
+            // return setDoc(currentUser.uid, currentUser.Sb.email)
         }
     }).catch(function (error) {
         console.log("Error getting document:", error);

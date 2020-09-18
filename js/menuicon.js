@@ -1,3 +1,4 @@
+// Lasse
 
     window.addEventListener('DOMContentLoaded', () => {
         clickHandler('menuIcon')
