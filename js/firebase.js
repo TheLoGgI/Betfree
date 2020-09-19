@@ -25,11 +25,7 @@ function documentSnapShot(userUID) {
         updateBalance(doc.data().AccountBalance )
         console.log("Current data: ", doc.data());
     });
-
-
 }
-
-
 
 // add a new user to firestore (database)
 // function createUser(userID, email, currency = 500) {
@@ -58,37 +54,23 @@ function addBets(userID, updateProps) {
 
 
 
-// const json = {
-//     commence_time: 1600522200,
-//     sites: {
-//         last_update: 1600357189,
-//         odds:  ["0", "1.25", "5.5"],
-//         site_key: "unibet",
-//         site_nice: "Unibet"
-//     },
-//     sport_nice: "Denmark Superliga"
-// }
-
-
 async function getDoc(currentUser) {
+    
+    return db.collection("user").doc(currentUser.uid);
 
-    const docRef = db.collection("user").doc(currentUser.uid);
+    // return await docRef.get().then(function (doc) {
+    //     if (doc.exists) {
+    //         console.log('Update user');
+    //         return doc.data()
 
-    return await docRef.get().then(function (doc) {
-        if (doc.exists) {
-            console.log('Update user');
-            // const parsed = JSON.parse(JSON.parse(doc.data().betArray[2]))
-            // addBets(currentUser.uid, JSON.stringify(json))
-            return doc.data()
-
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-            return setDoc(currentUser.uid, currentUser.Sb.email)
-        }
-    }).catch(function (error) {
-        console.log("Error getting document:", error);
-    });
+    //     } else {
+    //         // doc.data() will be undefined in this case
+    //         console.log("No such document!");
+            
+    //     }
+    // }).catch(function (error) {
+    //     console.log("Error getting document:", error);
+    // });
 
 }
 
@@ -96,8 +78,12 @@ async function getDoc(currentUser) {
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(async function (user) {
     if (user) { // if user exists and is authenticated
-        // const userdoc = await getDoc(user)
-        documentSnapShot(user.uid)
+        const userdoc = await getDoc(user)
+        if (userdoc.exists) {
+            documentSnapShot(user.uid)
+        } else {
+            setDoc(user.uid, user.Sb.email)
+        }
 
         
     } else { // if user is not logged in
