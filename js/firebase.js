@@ -1,5 +1,6 @@
 "use strict";
 // Your web app's Firebase configuration
+// Made by Lasse
 
 const firebaseConfig = {
     apiKey: "AIzaSyDFsOpP84x9nIEEIPUqb6jx1wNKDR4alzQ",
@@ -23,6 +24,7 @@ function documentSnapShot(userUID) {
     db.collection("user").doc(userUID)
     .onSnapshot(function(doc) {
         updateBalance(doc.data().AccountBalance )
+        appendBets(userUID)
         console.log("Current data: ", doc.data());
     });
 }

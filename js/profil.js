@@ -1,3 +1,4 @@
+// Made by Martin
 function myFunction(eEventKilde) {
     console.log(eEventKilde.target.dataset);
     const popUpBox = document.getElementById("popUpBox");

@@ -3,6 +3,7 @@ const glide = new Glide('.glide', {
     type: 'dragThreshold',
     perView: 5,
     breakpoints: {
+        600: {perView: 14},
     }
   })
 

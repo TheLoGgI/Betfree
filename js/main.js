@@ -1,3 +1,4 @@
+// Made by Martin
 const key = '6ab4bc81a3bc55bb217cf416846f852f'
 const region = 'eu'
 const sport = 'soccer_denmark_superliga'
@@ -77,7 +78,7 @@ function updateBalance(newBalance) {
     balance.textContent = `${newBalance} coins`
 }
 
-
+// Lasse
 function collectData({data}) {
     let i = 0
     if (data) {

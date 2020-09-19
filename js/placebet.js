@@ -1,4 +1,4 @@
-
+// **** Lasse ****
 let _GameID
 document.getElementById("amount").addEventListener("keyup", inputhandler);
 
@@ -9,11 +9,11 @@ function inputhandler(e) {
     let result = calculate(amount, factor)
     document.getElementById("reward").innerHTML = 'Reward ' + result + ' coins';
 }
-
+/* Wiktor */
 function calculate(amount, factor) {
     return Math.floor(Number(amount) * Number(factor))
 }
-
+// **** Lasse ****
 document.getElementById("acceptBet").addEventListener("click", betHandler);
 document.getElementById("declineBet").addEventListener("click", betHandler);
 
