@@ -56,35 +56,32 @@ function addBets(userID, updateProps) {
 
 async function getDoc(currentUser) {
     
-    return db.collection("user").doc(currentUser.uid);
+    const docRef = db.collection("user").doc(currentUser.uid);
 
-    // return await docRef.get().then(function (doc) {
-    //     if (doc.exists) {
-    //         console.log('Update user');
-    //         return doc.data()
+    return await docRef.get().then(function (doc) {
+        if (doc.exists) {
+            console.log('Update user');
+            return doc.data()
 
-    //     } else {
-    //         // doc.data() will be undefined in this case
-    //         console.log("No such document!");
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+            setDoc(user.uid, user.Sb.email)
             
-    //     }
-    // }).catch(function (error) {
-    //     console.log("Error getting document:", error);
-    // });
+        }
+    }).catch(function (error) {
+        console.log("Error getting document:", error);
+    });
 
 }
 
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(async function (user) {
+
     if (user) { // if user exists and is authenticated
         const userdoc = await getDoc(user)
-        if (userdoc.exists) {
-            documentSnapShot(user.uid)
-        } else {
-            setDoc(user.uid, user.Sb.email)
-        }
-
+        documentSnapShot(userdoc.uid)
         
     } else { // if user is not logged in
         userNotAuthenticated();

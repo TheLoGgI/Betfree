@@ -22,7 +22,7 @@ function betHandler(e) {
     if (target === 'declineBet') {
         classToggle('betModal', 'show-bet')
     } else {
-        // accpet bet and add to BettingArray in Firebase
+        // accept bet and add to BettingArray in Firebase
         const user = firebase.auth().currentUser;
         if(user) {
             // console.log(user.uid);
@@ -32,7 +32,7 @@ function betHandler(e) {
             addBets(user.uid, {
                 reward,
                 payed,
-                gameId: _GameID ? _GameID : 0
+                gameId: _GameID || 0
             })
             updateAccountBalance(user.uid, -payed)
             classToggle('betModal', 'show-bet')
@@ -52,6 +52,7 @@ function bettingHandler(nodeList) {
 function betting(e) {
     const element = classToggle('betModal', 'show-bet')
     const gameId = e.path[3].dataset.match
+    console.log(gameId);
     _GameID = e.path[3].dataset.match
     const bettingFactor = document.getElementById('factor')
     // change team winner and game event

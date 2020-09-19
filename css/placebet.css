@@ -19,6 +19,10 @@
     margin-top: 30px;
 }
 
+#betModal .coupon-title {
+    box-shadow: 0px 5px 20px 0px black;
+}
+
 .amount{
     display: flex;
     flex-direction: row;
@@ -82,6 +86,7 @@
     z-index: 30;
     transform: translateY(120px);
     transition: transform .3s ease;
+    
 }
 
 .show-bet {

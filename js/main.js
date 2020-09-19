@@ -1,5 +1,4 @@
-//let url = 'https://api.the-odds-api.com/v3/sports/?apiKey=';
-const key = 'fcb7c4adb099134a1854cf9b25f0331d'
+const key = '6ab4bc81a3bc55bb217cf416846f852f'
 const region = 'eu'
 const sport = 'soccer_denmark_superliga'
 const URL = `https://api.the-odds-api.com/v3/odds/?apiKey=${key}&sport=${sport}&region=${region}`
@@ -13,14 +12,13 @@ fetch(URL)
         if (data.success) {
             sportData =  collectData(data) 
             appendPosts(data.data);
+
             const btns = document.querySelectorAll('.gamebet__btn button');
             bettingHandler(btns)
         } else {
             throw new Error('Data was not fetched - ' + data.msg)
         }
-    }).catch(error => {
-        console.warn(error) 
-    })
+    }).catch(error => console.warn(error))
 
 
 
