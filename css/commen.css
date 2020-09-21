@@ -3,6 +3,18 @@
 @import url('./header.css');
 @import url('./menuicon.css');
 
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(./font/KumbhSans-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Kumbh Sans';
+    src: url(./font/KumbhSans-Regular.ttf);
+    font-weight: normal;
+}
+
 :root {
     --ff-heading: "Kumbh Sans", sans-serif;
     --ff-body: "Raleway", sans-serif;
@@ -61,6 +73,7 @@ h4 {
     z-index: 20;
     box-shadow: 0px 5px 20px 0px black;
 }
+
 
 .menu svg {
     width: 25px;
