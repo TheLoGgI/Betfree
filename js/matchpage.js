@@ -1,4 +1,5 @@
 document.getElementById("chosen").addEventListener("click", change);
+let couponsArray = document.getElementsByClassName("match-winner");
 
 let buttonsArray = document.getElementsByClassName("match-choice");
 
@@ -13,7 +14,6 @@ function removeAllClasses() {
     }
 }
 
-let couponsArray = document.getElementsByClassName("match-winner");
 console.log(couponsArray);
 function popular() {
     couponsArray[0].style.cssText = "display: block;"

@@ -36,8 +36,9 @@ function appendPosts(posts) {
         const liga = post.sport_nice;
 
         htmlTemplate += /*html*/ `
-        <a href="#matchpage">
+        
         <div class="game-event" data-match="${index}">
+        <a href="#matchpage">
             <div class="event-label">
                 <p>${getRandomDate()}</p>
                 <p>${liga}</p>
@@ -54,8 +55,9 @@ function appendPosts(posts) {
                     <button>${odds2}</button>
                 </div>
             </div>
+            </a>
         </div>
-        </a>
+        
     `;
     }
 
