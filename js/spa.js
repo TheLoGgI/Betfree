@@ -17,18 +17,6 @@ function showPage(pageId) {
     // setActiveTab(pageId);
 }
 
-// sets active tabbar/ menu item
-function setActiveTab(pageId) {
-    let pages = document.querySelectorAll(".tabbar a");
-    for (let page of pages) {
-        if (`#${pageId}` === page.getAttribute("href")) {
-            page.classList.add("active");
-        } else {
-            page.classList.remove("active");
-        }
-    }
-}
-
 // navigate to a new view/page by changing href
 function navigateTo(pageId) {
     location.href = `#${pageId}`;
@@ -46,14 +34,4 @@ function pageChange() {
 
 setTimeout(_ => {
     pageChange(); // called by default when the app is loaded for the first time
-},500)
-
-
-function showLoader(show) {
-    let loader = document.querySelector('#loader');
-    if (show) {
-        loader.classList.remove("hide");
-    } else {
-        loader.classList.add("hide");
-    }
-}
+},1000)
