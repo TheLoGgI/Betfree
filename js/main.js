@@ -43,6 +43,7 @@ function appendPosts(posts) {
                 <p>${getRandomDate()}</p>
                 <p>${liga}</p>
             </div>
+             </a>
             <div class="populargames__gamebet">
                 <div class="gamebet__gameinfo">
                     <p>${team1}</p>
@@ -55,7 +56,7 @@ function appendPosts(posts) {
                     <button>${odds2}</button>
                 </div>
             </div>
-            </a>
+           
         </div>
         
     `;
