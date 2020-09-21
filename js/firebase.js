@@ -24,7 +24,6 @@ function documentSnapShot(userUID) {
     db.collection("user").doc(userUID)
     .onSnapshot(function(doc) {
         updateBalance(doc.data().AccountBalance )
-        appendBets(userUID)
         console.log("Current data: ", doc.data());
     });
 }
