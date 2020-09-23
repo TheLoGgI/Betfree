@@ -14,6 +14,7 @@ header {
 
 .trademark {
     max-width: 8.5rem;
+    min-width: clamp(100px, 20vw, 155px);
     /* 160px */
 }
 
