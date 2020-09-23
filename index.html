@@ -27,10 +27,12 @@
 
     <header id="headerElement">
         <div class="coins">
-            <p id="balancecoins">2357 <span>coins</span></p>
+            <p id="balancecoins">0 <span>coins</span></p>
         </div>
 
-        <img class="trademark betfree-logo" src="./icons/betfree-colorgradient.svg" alt="BetFree Trademark">
+        <a href="#index" class="trademark">
+            <img class="trademark betfree-logo" src="./icons/betfree-colorgradient.svg" alt="BetFree Trademark">
+        </a>
 
 
         <div tabindex="3" id="menuIcon" class="menu-icon active">
@@ -492,7 +494,7 @@
 
     <footer class="menu">
         <!-- Back icon svg -->
-
+    <div>
         <svg x="0px" y="0px" viewBox="0 0 443.52 443.52" class="menu-icon" onclick="goBack()">
             <g>
                 <g>
@@ -502,8 +504,11 @@
                 </g>
             </g>
         </svg>
+        <p>Back</p>
+    </div>
 
         <!-- User icon svg -->
+        <div>
         <a href="#profil">
             <svg x="0px" y="0px" viewBox="0 0 512 512" class="menu-icon">
                 <g>
@@ -516,10 +521,12 @@
                     </g>
                 </g>
             </svg>
-
         </a>
+        <p>Profil</p>
+    </div>
 
         <!-- Award icon svg -->
+        <div>
         <a href="#leaderboard">
             <svg x="0px" y="0px" viewBox="0 0 392.551 392.551" class="menu-icon">
                 <g>
@@ -550,11 +557,13 @@
                 </g>
 
             </svg>
-
         </a>
+        <p>Awards</p>
+        </div>
 
 
         <!-- Ticket icon svg -->
+        <div>
         <a href="#mybets">
             <svg x="0px" y="0px" viewBox="0 0 478.792 478.792" class="menu-icon">
                 <g>
@@ -606,6 +615,8 @@
 
             </svg>
         </a>
+        <p>My Bets</p>
+        </div>
 
     </footer>
 
