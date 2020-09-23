@@ -2,7 +2,7 @@ let bet1 = document.getElementById('coupon1');
 console.log(sportData);
 
 function cancel1() {
-    document.getElementById('coupon1').style.cssText = "display: none";
+    bet1.style.cssText = "display: none";
 }
 
 let bet2 = document.getElementById('coupon2');

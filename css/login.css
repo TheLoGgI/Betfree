@@ -126,6 +126,7 @@ iframe{
     padding: 0px 10px;
     height: 50px;
     font-size: 14px;
+    font-family: var(--ff-body);
 }
 
 .match-bets{
@@ -139,9 +140,10 @@ iframe{
 .match-top{
     background-color: var(--clr-main);
     color: white;
-    padding: 5px;
+    padding: 2px;
     text-align: center;
     width: 100%;
+    font-size: 16px;
 }
 
 .match-winner{
