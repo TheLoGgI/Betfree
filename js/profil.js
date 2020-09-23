@@ -1,4 +1,3 @@
-// Made by Martin
 function myFunction(eEventKilde) {
     console.log(eEventKilde.target.dataset);
     const popUpBox = document.getElementById("popUpBox");
@@ -11,6 +10,7 @@ function myFunction(eEventKilde) {
 
 }
 let nodeList = document.getElementsByClassName('button-achievements')
+console.log(nodeList);
 achievementHandler(nodeList)
 //document.getElementById('achievementsFlexContainer').addEventListener('click', myFunction)
 

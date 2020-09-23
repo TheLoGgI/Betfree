@@ -5,13 +5,14 @@ const sport = 'soccer_denmark_superliga'
 const URL = `https://api.the-odds-api.com/v3/odds/?apiKey=${key}&sport=${sport}&region=${region}`
 let sportData
 
+
 fetch(URL)
     .then(function (data) {
         return data.json()
     })
     .then(function (data) {
         if (data.success) {
-            sportData =  collectData(data) 
+            sportData = collectData(data)
             appendPosts(data.data);
 
             const btns = document.querySelectorAll('.gamebet__btn button');
@@ -21,7 +22,7 @@ fetch(URL)
         }
     }).catch(error => console.warn(error))
 
-
+console.log(sportData);
 
 function appendPosts(posts) {
     let htmlTemplate = "";
@@ -83,7 +84,7 @@ function updateBalance(newBalance) {
 }
 
 // Lasse
-function collectData({data}) {
+function collectData({ data }) {
     let i = 0
     if (data) {
         return data.reduce((acc, obj) => {
@@ -96,7 +97,7 @@ function collectData({data}) {
             }]
         }, [])
     } else {
-        return {error: 'no data was collected'}
+        return { error: 'no data was collected' }
     }
 }
 
